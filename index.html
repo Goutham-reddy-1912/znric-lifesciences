@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Znric Life Sciences — Precision Chromatography Solutions</title>
+<meta name="description" content="Znric Life Sciences supplies premium HPLC columns, GC columns, syringe filters, and lab consumables. Based in Hyderabad, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="z-mark">Z</div>
+    <span>znric <span style="color:var(--teal);font-weight:400;">life sciences</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#spotlight">New</a></li>
+    <li><a href="#gc-section">GC Columns</a></li>
+    <li><a href="#consumables">Consumables</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#products" onclick="closeMobileNav()">Products</a>
+  <a href="#spotlight" onclick="closeMobileNav()">New Product</a>
+  <a href="#gc-section" onclick="closeMobileNav()">GC Columns</a>
+  <a href="#consumables" onclick="closeMobileNav()">Consumables</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#contact" onclick="closeMobileNav()">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="hero-content reveal">
+    <div class="hero-eyebrow">HYDERABAD · INDIA &nbsp;|&nbsp; PRECISION CHROMATOGRAPHY</div>
+    <h1 class="hero-h1">
+      Where <em>Science</em><br>
+      Meets Separation<br>
+      Precision.
+    </h1>
+    <p class="hero-desc">
+      Znric Life Sciences supplies premium HPLC columns, GC columns, syringe filters, and lab consumables — engineered for research, pharmaceutical, and industrial analysis.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">
+        Explore Columns
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn-ghost">Request Pricing</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat reveal reveal-delay-1">
+        <span class="counter" data-target="50">0</span>
+        <p>Column variants</p>
+      </div>
+      <div class="hero-stat reveal reveal-delay-2">
+        <span class="counter" data-target="500">0</span>
+        <p>Hours lifetime tested</p>
+      </div>
+      <div class="hero-stat reveal reveal-delay-3">
+        <span class="counter" data-target="12">0</span>
+        <p>pH range support</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal reveal-delay-2">
+    <div class="readout-card">
+      <div class="readout-header">
+        <div class="readout-title">COLUMN · ATHENA C18-WP · LIVE SPEC</div>
+        <div class="readout-live">ACTIVE</div>
+      </div>
+      <div class="readout-grid">
+        <div class="readout-cell">
+          <div class="rc-label">PARTICLE SIZE</div>
+          <div class="rc-value">3<span class="rc-unit">μm / 5μm</span></div>
+        </div>
+        <div class="readout-cell">
+          <div class="rc-label">PORE SIZE</div>
+          <div class="rc-value">100<span class="rc-unit">Å</span></div>
+        </div>
+        <div class="readout-cell">
+          <div class="rc-label">CARBON CONTENT</div>
+          <div class="rc-value">17<span class="rc-unit">%</span></div>
+        </div>
+        <div class="readout-cell">
+          <div class="rc-label">pH RANGE</div>
+          <div class="rc-value">1.5<span class="rc-unit">–10</span></div>
+        </div>
+        <div class="readout-cell">
+          <div class="rc-label">TEMP RANGE</div>
+          <div class="rc-value">20–60<span class="rc-unit">°C</span></div>
+        </div>
+        <div class="readout-cell">
+          <div class="rc-label">END-CAPPED</div>
+          <div class="rc-value" style="color:var(--teal)">Yes</div>
+        </div>
+      </div>
+      <div class="readout-chart" id="heroChart"></div>
+      <div class="readout-footer">
+        <div class="readout-badge">HPLC ANALYTICAL</div>
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;color:var(--muted);">Diameter 2.1 / 4.6 mm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="arrow"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- PRODUCT CATEGORIES -->
+<section id="categories">
+  <div class="section-eyebrow">PRODUCT RANGE</div>
+  <h2 class="section-title">Complete Analytical<br>Column Portfolio</h2>
+  <div class="categories-grid">
+    <div class="cat-card featured reveal" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">⚗️</div>
+      <h3>HPLC Analytical Columns</h3>
+      <p>Silica-based columns including C18, C8, C4, C30, Phenyl, Silica, NH2, CN, Diol, SAX, SCX, and HILIC phases. Particle sizes 3–5 μm.</p>
+      <div class="cat-count">16 COLUMN TYPES · ATHENA SERIES</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-1" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🧬</div>
+      <h3>Polymer Matrix Columns</h3>
+      <p>CNWSep reverse phase, sugar & organic acid separation, and ion exchange columns for complex matrices.</p>
+      <div class="cat-count">CNWSep SERIES · 20+ VARIANTS</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-2" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🔬</div>
+      <h3>SEC / GPC Columns</h3>
+      <p>CruxPoly and ElfPoly polymer matrix SEC columns, plus CNWGel silica SEC columns for molecular weight distribution.</p>
+      <div class="cat-count">T100–TMIX · pH 1–14</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-3" onclick="document.getElementById('gc-section').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🌡️</div>
+      <h3>GC Capillary Columns</h3>
+      <p>Wax, 225, 1701, 1301, CD-50, CD-35, CD-5 phases. Wide temperature ranges from −60°C to 320°C.</p>
+      <div class="cat-count">CD SERIES · 7 PHASES</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-1" onclick="document.getElementById('consumables').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🧪</div>
+      <h3>Syringe Filters</h3>
+      <p>PTFE, PVDF, and NYLON membranes in 0.22 μm and 0.45 μm pore sizes. 25 mm diameter, 100/box.</p>
+      <div class="cat-count">3 MEMBRANE TYPES · 8 VARIANTS</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-2" onclick="document.getElementById('consumables').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">📦</div>
+      <h3>Lab Consumables</h3>
+      <p>HPLC vials, crimp & screw caps, mobile phase filtration assemblies, headspace vials, disposable syringes, and mechanical pipettes.</p>
+      <div class="cat-count">FULL CONSUMABLES RANGE</div>
+    </div>
+  </div>
+</section>
+
+<!-- HPLC PRODUCTS DEEP DIVE -->
+<section id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-eyebrow">HPLC COLUMNS</div>
+      <h2 class="section-title reveal">Athena Series — Full Specification Data</h2>
+    </div>
+    <div class="products-header-right reveal">
+      <p class="section-sub">All columns feature end-capping and are available in 2.1 and 4.6 mm diameter. Length options: 50, 100, 150, 200, 250 mm.</p>
+    </div>
+  </div>
+
+  <div class="tab-nav" id="tabNav">
+    <button class="tab-btn active" data-tab="silica">Silica-Based</button>
+    <button class="tab-btn" data-tab="polymer">Polymer Matrix</button>
+    <button class="tab-btn" data-tab="sec">SEC / GPC</button>
+    <button class="tab-btn" data-tab="prep">Prep & Semi-Prep</button>
+  </div>
+
+  <!-- Silica -->
+  <div class="tab-panel active" id="tab-silica">
+    <div class="spec-table-wrap reveal">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Column Name</th>
+            <th>Particle Size (μm)</th>
+            <th>Pore Size (Å)</th>
+            <th>Carbon %</th>
+            <th>pH Range</th>
+            <th>Temp (°C)</th>
+            <th>End-Cap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Athena C18-WP</td><td>3, 5</td><td>100</td><td>17</td><td><span class="ph-badge">1.5–10</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena C18</td><td>5</td><td>120</td><td>17</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena C18-BIO</td><td>5</td><td>300</td><td>8</td><td><span class="ph-badge">1.5–11</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena C8</td><td>3, 5</td><td>120</td><td>10</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena C4</td><td>5</td><td>300</td><td>3</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena C30</td><td>3, 5</td><td>120</td><td>20</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena Phenyl</td><td>5</td><td>120</td><td>11</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena Silica</td><td>3, 5</td><td>120</td><td>0</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena NH2</td><td>3, 5</td><td>120</td><td>4</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena CN</td><td>3, 5</td><td>120</td><td>7.5</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena Diol</td><td>3, 5</td><td>120</td><td>8.8</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena SAX</td><td>3, 5</td><td>120</td><td>16</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena SCX</td><td>3, 5</td><td>120</td><td>11</td><td><span class="ph-badge">2–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena HILIC</td><td>3, 5</td><td>120</td><td>8.6</td><td><span class="ph-badge">1.5–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena HILIC (2)</td><td>3, 5</td><td>120</td><td>8</td><td><span class="ph-badge">1.5–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>Athena HILIC (3)</td><td>5</td><td>120</td><td>16</td><td><span class="ph-badge">1.5–8</span></td><td>20–60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Polymer -->
+  <div class="tab-panel" id="tab-polymer">
+    <div class="spec-table-wrap reveal">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Column Name</th>
+            <th>Particle Size (μm)</th>
+            <th>Diameter (mm)</th>
+            <th>Length (mm)</th>
+            <th>pH Range</th>
+            <th>Temp (°C)</th>
+            <th>End-Cap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="7" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">REVERSE PHASE</td></tr>
+          <tr><td>CNWSep Reverse Phase</td><td>5, 10</td><td>2.1, 4.6, 7.8</td><td>50, 100, 150, 250</td><td><span class="ph-badge">2–8</span></td><td>60</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td colspan="7" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">SUGAR & ORGANIC ACIDS — H-form</td></tr>
+          <tr><td>CNWSep H-L</td><td>5, 10</td><td>4.6, 7.8</td><td>250, 300</td><td><span class="ph-badge">1–3</span></td><td>85</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>CNWSep H-M</td><td>5, 10</td><td>4.6, 7.8</td><td>100–300</td><td><span class="ph-badge">1–3</span></td><td>85</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>CNWSep H-H</td><td>5, 10</td><td>4.6, 7.8</td><td>250, 300</td><td><span class="ph-badge">1–3</span></td><td>85</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td colspan="7" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">Ca/Pb/K/Na FORMS</td></tr>
+          <tr><td>CNWSep Ca/Pb/K/Na (-L/M/H)</td><td>5, 10</td><td>4.6, 7.8</td><td>100–300</td><td><span class="ph-badge">5–9</span></td><td>85</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td colspan="7" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">ION EXCHANGE</td></tr>
+          <tr><td>CNWSep SAX / WAX</td><td>3, 5, 10</td><td>2.1, 4.6</td><td>50–250</td><td><span class="ph-badge">2–12</span></td><td>—</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+          <tr><td>CNWSep SCX / WCX</td><td>3, 5, 10</td><td>2.1, 4.6</td><td>50–250</td><td><span class="ph-badge">2–12</span></td><td>—</td><td><span class="tag-yes">✓ Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SEC -->
+  <div class="tab-panel" id="tab-sec">
+    <div class="spec-table-wrap reveal">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Column Name</th>
+            <th>Particle Size (μm)</th>
+            <th>Pore Size (Å)</th>
+            <th>pH Range</th>
+            <th>Temp (°C)</th>
+            <th>Series</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="6" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">CruxPoly — Polymer Matrix</td></tr>
+          <tr><td>CruxPoly T100</td><td>5, 10</td><td>100</td><td><span class="ph-badge">1–14</span></td><td>145</td><td>CruxPoly</td></tr>
+          <tr><td>CruxPoly T300</td><td>5, 10</td><td>300</td><td><span class="ph-badge">1–14</span></td><td>145</td><td>CruxPoly</td></tr>
+          <tr><td>CruxPoly T500</td><td>5, 10</td><td>500</td><td><span class="ph-badge">1–14</span></td><td>145</td><td>CruxPoly</td></tr>
+          <tr><td>CruxPoly T1000</td><td>5, 10</td><td>1000</td><td><span class="ph-badge">1–14</span></td><td>145</td><td>CruxPoly</td></tr>
+          <tr><td>CruxPoly TMIX</td><td>5, 10</td><td>100–1000</td><td><span class="ph-badge">1–14</span></td><td>145</td><td>CruxPoly</td></tr>
+          <tr><td colspan="6" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">ElfPoly — Polymer Matrix</td></tr>
+          <tr><td>ElfPoly Z300</td><td>5</td><td>500</td><td><span class="ph-badge">1–14</span></td><td>250</td><td>ElfPoly</td></tr>
+          <tr><td>ElfPoly Z500</td><td>5</td><td>1000</td><td><span class="ph-badge">1–14</span></td><td>250</td><td>ElfPoly</td></tr>
+          <tr><td>ElfPoly ZMIX</td><td>5</td><td>300–2000</td><td><span class="ph-badge">1–14</span></td><td>250</td><td>ElfPoly</td></tr>
+          <tr><td colspan="6" style="background:rgba(0,212,200,0.06);color:var(--teal);font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;padding:10px 18px;">CNWGel — Silica-Based SEC</td></tr>
+          <tr><td>CNWGel X3010 / X3015 / X3030</td><td>3</td><td>100–300</td><td><span class="ph-badge">2–8.5</span></td><td>80</td><td>CNWGel</td></tr>
+          <tr><td>CNWGel X5010–X5200</td><td>5</td><td>100–2000</td><td><span class="ph-badge">2–8.5</span></td><td>80</td><td>CNWGel</td></tr>
+          <tr><td>CNWGel S3010–S5050</td><td>3–5</td><td>100–500</td><td><span class="ph-badge">2–8.5</span></td><td>80</td><td>CNWGel</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Prep -->
+  <div class="tab-panel" id="tab-prep">
+    <div class="spec-table-wrap reveal">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Stationary Phase</th>
+            <th>Type</th>
+            <th>Prep Dimensions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Athena C18</td><td>Silica Gel</td><td>50mm × 10.0mm</td></tr>
+          <tr><td>Athena C18-BIO</td><td>Silica Gel</td><td>100mm × 10.0mm</td></tr>
+          <tr><td>Athena C8</td><td>Silica Gel</td><td>150mm × 10.0mm</td></tr>
+          <tr><td>Athena C4</td><td>Silica Gel</td><td>250mm × 10.0mm</td></tr>
+          <tr><td>Athena Phenyl</td><td>Silica Gel</td><td>10mm × 21.2mm</td></tr>
+          <tr><td>Athena Silica</td><td>Silica Gel</td><td>50mm × 21.2mm</td></tr>
+          <tr><td>Athena CN</td><td>Silica Gel</td><td>100mm × 21.2mm</td></tr>
+          <tr><td>Athena NH2</td><td>Silica Gel</td><td>150mm × 21.2mm</td></tr>
+          <tr><td>Athena Diol</td><td>Silica Gel</td><td>250mm × 21.2mm</td></tr>
+          <tr><td>Athena HILIC</td><td>Silica Gel</td><td>50mm × 30.0mm</td></tr>
+          <tr><td>Athena HILIC (2)</td><td>Silica Gel</td><td>100mm × 30.0mm</td></tr>
+          <tr><td>Athena HILIC (3)</td><td>Silica Gel</td><td>150mm × 30.0mm</td></tr>
+          <tr><td>Athena SAX</td><td>Silica Gel</td><td>250mm × 30.0mm</td></tr>
+          <tr><td>Athena SCX</td><td>Silica Gel</td><td>50mm × 50.0mm</td></tr>
+          <tr><td>CNWSep RP1 / RP3 / SP</td><td>Polymer Matrix</td><td>Multiple</td></tr>
+          <tr><td>CNWSep SAX / WAX / SCX / WCX</td><td>Polymer Matrix</td><td>Multiple</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1.5rem;color:var(--muted);font-size:0.85rem;">Particle size 5 and 10 μm. Contact us for full dimensional availability.</p>
+  </div>
+</section>
+
+<!-- NEW PRODUCT SPOTLIGHT -->
+<section id="spotlight">
+  <div class="spotlight-inner">
+    <div class="reveal">
+      <div class="spotlight-badge">NEW PRODUCT · CNW ATHENA XPH-C18</div>
+      <h2 class="spotlight-title">High-pH Mobile<br>Phase Column</h2>
+      <p class="spotlight-desc">
+        Developed using hybrid silica gel synthesis and trifunctional bonding technology, the Athena XPH-C18 withstands pH 1–12 and maintains excellent separation selectivity at high pH (>7) and elevated temperatures up to 65°C.
+      </p>
+      <div class="spotlight-specs">
+        <div class="spec-item">
+          <div class="s-label">PARTICLE SIZE</div>
+          <div class="s-val">1.7, 2.5, 3, 3.5, 5 μm</div>
+        </div>
+        <div class="spec-item">
+          <div class="s-label">PORE SIZE</div>
+          <div class="s-val">130 Å</div>
+        </div>
+        <div class="spec-item">
+          <div class="s-label">CARBON LOADING</div>
+          <div class="s-val">18%</div>
+        </div>
+        <div class="spec-item">
+          <div class="s-label">ENDCAPPING</div>
+          <div class="s-val">Double</div>
+        </div>
+        <div class="spec-item">
+          <div class="s-label">SURFACE AREA</div>
+          <div class="s-val">180 m²/g</div>
+        </div>
+        <div class="spec-item">
+          <div class="s-label">PRESSURE RANGE</div>
+          <div class="s-val">Up to 100 MPa</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request Sample</a>
+        <a href="#contact" class="btn-ghost">Technical Datasheet</a>
+      </div>
+    </div>
+
+    <div class="spotlight-visual reveal reveal-delay-2">
+      <div class="ph-display">
+        <div class="ph-title">pH PERFORMANCE ENVELOPE · ATHENA XPH-C18</div>
+        <div class="ph-bar-track">
+          <div class="ph-range-indicator"></div>
+        </div>
+        <div class="ph-labels">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          <span>11</span><span>12</span>
+        </div>
+        <div class="ph-claim">pH 1–12</div>
+        <div class="ph-claim-sub">Full working range with stability</div>
+
+        <div class="performance-bars" id="perfBars">
+          <div class="perf-row">
+            <div class="perf-label">EFFICIENCY</div>
+            <div class="perf-track"><div class="perf-fill" data-width="0.92"></div></div>
+            <div class="perf-val">92%</div>
+          </div>
+          <div class="perf-row">
+            <div class="perf-label">STABILITY 500h</div>
+            <div class="perf-track"><div class="perf-fill" data-width="0.88"></div></div>
+            <div class="perf-val">88%</div>
+          </div>
+          <div class="perf-row">
+            <div class="perf-label">SELECTIVITY</div>
+            <div class="perf-track"><div class="perf-fill amber" data-width="0.95"></div></div>
+            <div class="perf-val" style="color:var(--amber)">95%</div>
+          </div>
+          <div class="perf-row">
+            <div class="perf-label">HIGH TEMP</div>
+            <div class="perf-track"><div class="perf-fill" data-width="0.85"></div></div>
+            <div class="perf-val">65°C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GC COLUMNS -->
+<section id="gc-section">
+  <div class="section-eyebrow">GAS CHROMATOGRAPHY</div>
+  <h2 class="section-title reveal">Capillary GC Column Series</h2>
+  <p class="section-sub reveal">All capillary columns available in ID 0.25, 0.32, 0.53 mm with Df 0.25–5 μm. Length 15, 30, 60 m options.</p>
+
+  <div class="gc-grid">
+    <div class="gc-card reveal">
+      <div class="gc-card-header">
+        <div class="gc-name">CD WAX</div>
+        <div class="gc-temp">20–250 °C</div>
+      </div>
+      <div class="gc-similar">
+        <strong>SIMILAR PHASES</strong>
+        DB-WAX, SUPELCOWAX, HP-WAX, RTX-WAX, HP-INNOWAX, CP-WAX 52 CB, STABILWAX, 007-CW, BP20, AT-WAX, ZB-WAX
+      </div>
+      <div class="gc-dims">
+        <span class="dim-chip">15 m</span><span class="dim-chip">30 m</span><span class="dim-chip">60 m</span>
+        <span class="dim-chip">Df 0.25–1 μm</span>
+      </div>
+    </div>
+
+    <div class="gc-card reveal reveal-delay-1">
+      <div class="gc-card-header">
+        <div class="gc-name">CD 1701</div>
+        <div class="gc-temp">20–280 °C</div>
+      </div>
+      <div class="gc-similar">
+        <strong>SIMILAR PHASES</strong>
+        OV-1701, DB-1701, CP-SIL 19 CB, HP-1701, RTX-1701, SPB-1701, 007-1701, BP10, ZB-1701
+      </div>
+      <div class="gc-dims">
+        <span class="dim-chip">15 m</span><span class="dim-chip">30 m</span><span class="dim-chip">60 m</span>
+      </div>
+    </div>
+
+    <div class="gc-card reveal reveal-delay-2">
+      <div class="gc-card-header">
+        <div class="gc-name">CD-5</div>
+        <div class="gc-temp">−60–320 °C</div>
+      </div>
+      <div class="gc-similar">
+        <strong>SIMILAR PHASES</strong>
+        SE-54, SE-52, DB-5, HP-5, AT-5, ZB-5 ULTRA-2, SPB-5, CP-SIL 8, RTX-5, 007-5, BP5, MDN-5
+      </div>
+      <div class="gc-dims">
+        <span class="dim-chip">15–100 m</span><span class="dim-chip">Df 0.25–5 μm</span>
+      </div>
+    </div>
+
+    <div class="gc-card reveal reveal-delay-3">
+      <div class="gc-card-header">
+        <div class="gc-name">CD 1301</div>
+        <div class="gc-temp">−20–280 °C</div>
+      </div>
+      <div class="gc-similar">
+        <strong>SIMILAR PHASES</strong>
+        HP-1301, DB-1301, SPB-1301, RTX-1301, CP-1301, 007-1301
+      </div>
+      <div class="gc-dims">
+        <span class="dim-chip">15 m</span><span class="dim-chip">30 m</span><span class="dim-chip">60 m</span><span class="dim-chip">100 m</span>
+      </div>
+    </div>
+
+    <div class="gc-card reveal">
+      <div class="gc-card-header">
+        <div class="gc-name">CD-50</div>
+        <div class="gc-temp">30–310 °C</div>
+      </div>
+      <div class="gc-similar">
+        <strong>SIMILAR PHASES</strong>
+        OV-17, DB-17, HP-50+, HP-17, SPB-50, SP-2250, RTX-50, CP-SIL 24 CB, 007-17, ZB-50
+      </div>
+      <div class="gc-dims">
+        <span class="dim-chip">15 m</span><span class="dim-chip">30 m</span><span class="dim-chip">60 m</span>
+      </div>
+    </div>
+
+    <div class="gc-card reveal reveal-delay-1">
+      <div class="gc-card-header">
+        <div class="gc-name">CD 225</div>
+        <div class="gc-temp">40–240 °C</div>
+      </div>
+      <div class="gc-similar">
+        <strong>SIMILAR PHASES</strong>
+        DB-225, HP-225, OV-225, RTX-225, CP-SIL 43, 007-225, BP225
+      </div>
+      <div class="gc-dims">
+        <span class="dim-chip">15 m</span><span class="dim-chip">30 m</span><span class="dim-chip">60 m</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSUMABLES -->
+<section id="consumables">
+  <div class="section-eyebrow">LAB CONSUMABLES</div>
+  <h2 class="section-title reveal">Everything You Need,<br>Sample to Result</h2>
+
+  <div class="consumables-layout">
+    <div class="consumables-nav" id="consNav">
+      <button class="cons-nav-btn active" data-cons="filters">
+        <span class="c-icon">🔵</span> Syringe Filters
+      </button>
+      <button class="cons-nav-btn" data-cons="disc">
+        <span class="c-icon">⚪</span> Disc Filters
+      </button>
+      <button class="cons-nav-btn" data-cons="vials">
+        <span class="c-icon">🧴</span> HPLC Vials
+      </button>
+      <button class="cons-nav-btn" data-cons="headspace">
+        <span class="c-icon">🫙</span> Headspace Vials
+      </button>
+      <button class="cons-nav-btn" data-cons="syringes">
+        <span class="c-icon">💉</span> Disposable Syringes
+      </button>
+    </div>
+
+    <div>
+      <!-- Syringe Filters -->
+      <div class="cons-panel active" id="cons-filters">
+        <h3>Syringe Filters</h3>
+        <p>Available in PTFE, PVDF, and NYLON membranes. 25 mm diameter, packed 100 per box. Available with or without prefiltration layer.</p>
+        <div class="filter-cards">
+          <div class="filter-card">
+            <div class="fc-type">PTFE Syringe</div>
+            <div class="fc-detail">Pore: 0.45 μm · 25 mm<br>With prefiltration layer</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">PTFE Syringe</div>
+            <div class="fc-detail">Pore: 0.22 μm · 25 mm<br>With prefiltration layer</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">PTFE Syringe</div>
+            <div class="fc-detail">Pore: 0.45 μm · 25 mm<br>PTFE membrane</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">PTFE Syringe</div>
+            <div class="fc-detail">Pore: 0.22 μm · 25 mm<br>PTFE membrane</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">PVDF Syringe</div>
+            <div class="fc-detail">Pore: 0.45 μm · 25 mm<br>PVDF membrane</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">PVDF Syringe</div>
+            <div class="fc-detail">Pore: 0.22 μm · 25 mm<br>PVDF membrane</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">NYLON Syringe</div>
+            <div class="fc-detail">Pore: 0.45 μm · 25 mm<br>NYLON membrane</div>
+          </div>
+          <div class="filter-card">
+            <div class="fc-type">NYLON Syringe</div>
+            <div class="fc-detail">Pore: 0.22 μm · 25 mm<br>NYLON membrane</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disc Filters -->
+      <div class="cons-panel" id="cons-disc">
+        <h3>Mobile Phase Disc Filters</h3>
+        <p>For mobile phase filtration assemblies. Available in PTFE, PVDF, and Nylon. Multiple sizes and pore ratings. 100/box.</p>
+        <div class="filter-cards">
+          <div class="filter-card"><div class="fc-type">PTFE Disc</div><div class="fc-detail">0.45 μm · 25 mm</div></div>
+          <div class="filter-card"><div class="fc-type">PTFE Disc</div><div class="fc-detail">0.45 μm · 47 mm</div></div>
+          <div class="filter-card"><div class="fc-type">PTFE Disc</div><div class="fc-detail">0.22 μm · 25 mm</div></div>
+          <div class="filter-card"><div class="fc-type">PTFE Disc</div><div class="fc-detail">0.22 μm · 47 mm</div></div>
+          <div class="filter-card"><div class="fc-type">PVDF Disc</div><div class="fc-detail">0.45 μm · 25 mm</div></div>
+          <div class="filter-card"><div class="fc-type">PVDF Disc</div><div class="fc-detail">0.45 μm · 47 mm</div></div>
+          <div class="filter-card"><div class="fc-type">PVDF Disc</div><div class="fc-detail">0.22 μm · 25 mm</div></div>
+          <div class="filter-card"><div class="fc-type">Nylon Disc</div><div class="fc-detail">0.45 μm · 25 mm</div></div>
+          <div class="filter-card"><div class="fc-type">Nylon Disc</div><div class="fc-detail">0.22 μm · 47 mm</div></div>
+        </div>
+      </div>
+
+      <!-- Vials -->
+      <div class="cons-panel" id="cons-vials">
+        <h3>HPLC Vials</h3>
+        <p>Screw thread and crimp neck vials in amber and transparent glass. 2 mL capacity. Complete with matching caps and septa.</p>
+        <div class="filter-cards">
+          <div class="filter-card"><div class="fc-type">Screw Thread Vial</div><div class="fc-detail">Colour: Amber · 2 mL</div></div>
+          <div class="filter-card"><div class="fc-type">Screw Thread Vial</div><div class="fc-detail">Colour: Transparent · 2 mL</div></div>
+          <div class="filter-card"><div class="fc-type">Crimp Neck Vial</div><div class="fc-detail">Colour: Amber · 2 mL</div></div>
+          <div class="filter-card"><div class="fc-type">Screw Thread Caps</div><div class="fc-detail">For screw thread vials</div></div>
+          <div class="filter-card"><div class="fc-type">Screw Thread Septa</div><div class="fc-detail">For screw thread vials</div></div>
+          <div class="filter-card"><div class="fc-type">Crimp Neck Septa</div><div class="fc-detail">For crimp neck vials</div></div>
+        </div>
+      </div>
+
+      <!-- Headspace -->
+      <div class="cons-panel" id="cons-headspace">
+        <h3>Headspace Vials</h3>
+        <p>20 mm crimp neck headspace vials in glass clear, flat bottom with white marking spot. Type I Class A glass. CNW logo.</p>
+        <div class="filter-cards">
+          <div class="filter-card"><div class="fc-type">6 mL Headspace</div><div class="fc-detail">38.2 × 22 mm · Type I Class A</div></div>
+          <div class="filter-card"><div class="fc-type">10 mL Headspace</div><div class="fc-detail">46 × 22.5 mm · Type I Class A</div></div>
+          <div class="filter-card"><div class="fc-type">20 mL Headspace</div><div class="fc-detail">75.5 × 22.5 mm · Type I Class A</div></div>
+          <div class="filter-card"><div class="fc-type">Aluminium Cap</div><div class="fc-detail">20 mm crimp · Centre hole · No septa</div></div>
+          <div class="filter-card"><div class="fc-type">Butyl Septa</div><div class="fc-detail">Grey · For 20 mm crimp vials</div></div>
+        </div>
+      </div>
+
+      <!-- Syringes -->
+      <div class="cons-panel" id="cons-syringes">
+        <h3>Disposable Syringes</h3>
+        <p>Rubber-free disposable syringes. Also available as Luer slip, eccentric delivery type. Single use, sterile packed.</p>
+        <div class="filter-cards">
+          <div class="filter-card"><div class="fc-type">2 mL Syringe</div><div class="fc-detail">Rubber-free · Single use</div></div>
+          <div class="filter-card"><div class="fc-type">5 mL Syringe</div><div class="fc-detail">Rubber-free · Single use</div></div>
+          <div class="filter-card"><div class="fc-type">10 mL Syringe</div><div class="fc-detail">Rubber-free · Single use</div></div>
+          <div class="filter-card"><div class="fc-type">20 mL Syringe</div><div class="fc-detail">Rubber-free · Single use</div></div>
+          <div class="filter-card"><div class="fc-type">Luer Slip 2 mL</div><div class="fc-detail">Eccentric delivery</div></div>
+          <div class="filter-card"><div class="fc-type">Luer Slip 5–20 mL</div><div class="fc-detail">Eccentric delivery</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY ZNRIC -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-eyebrow">ABOUT ZNRIC</div>
+      <h2 class="section-title">Precision Science,<br>Local Expertise</h2>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:540px;">
+        Znric Life Sciences is a Hyderabad-based supplier of chromatography columns and laboratory consumables, delivering the same quality standard as global leaders — with the responsiveness of a local partner.
+      </p>
+      <p style="color:var(--muted);line-height:1.8;max-width:540px;">
+        Our HPLC and GC column portfolio covers every separation challenge: reversed-phase, ion exchange, HILIC, size exclusion, and preparative applications. Every column undergoes rigorous performance testing before dispatch.
+      </p>
+      <div class="hero-actions" style="margin-top:2.5rem;">
+        <a href="#contact" class="btn-primary">Talk to a Specialist</a>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="feature-block reveal">
+        <div class="feature-icon">🎯</div>
+        <div>
+          <h4>Performance Tested</h4>
+          <p>Each column verified for efficiency, peak symmetry, and retention before delivery.</p>
+        </div>
+      </div>
+      <div class="feature-block reveal reveal-delay-1">
+        <div class="feature-icon">🧪</div>
+        <div>
+          <h4>Full Phase Range</h4>
+          <p>C18 to HILIC, ion exchange to SEC — one supplier for your entire analytical workflow.</p>
+        </div>
+      </div>
+      <div class="feature-block reveal reveal-delay-2">
+        <div class="feature-icon">📦</div>
+        <div>
+          <h4>Rapid Local Supply</h4>
+          <p>Hyderabad-based with fast dispatch across India. Same quality, shorter lead times.</p>
+        </div>
+      </div>
+      <div class="feature-block reveal reveal-delay-3">
+        <div class="feature-icon">🤝</div>
+        <div>
+          <h4>Technical Support</h4>
+          <p>Expert guidance on column selection, method development, and troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">CONTACT US</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-sub" style="margin-bottom:3rem;">Request a quote, technical specifications, or talk to a chromatography specialist.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <h4>ADDRESS</h4>
+            <p>2nd Floor, H.no: 6-134/8/A/1, Plot No. 8,<br>Pragathinagar Road, Near Silpa Paradise,<br>Pragathi Nagar, Hyderabad 500090</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <h4>PHONE</h4>
+            <p><a href="tel:+917989693894">+91 7989693894</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🌐</div>
+          <div>
+            <h4>WEBSITE</h4>
+            <p><a href="https://www.znric-lifesciences.com" target="_blank">www.znric-lifesciences.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-block reveal reveal-delay-1">
+      <h3>Request a Quote</h3>
+      <p>Tell us what you need and we'll respond within one business day with pricing and availability.</p>
+      <div class="cta-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>NAME</label>
+            <input type="text" placeholder="Dr. / Mr. / Ms.">
+          </div>
+          <div class="form-field">
+            <label>ORGANISATION</label>
+            <input type="text" placeholder="Lab / Institute / Company">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>EMAIL</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-field">
+          <label>PRODUCT OF INTEREST</label>
+          <select>
+            <option value="">Select a product category</option>
+            <option>Athena HPLC Columns</option>
+            <option>CNWSep Polymer Columns</option>
+            <option>SEC / GPC Columns</option>
+            <option>GC Capillary Columns</option>
+            <option>Athena XPH-C18 (New)</option>
+            <option>Syringe Filters</option>
+            <option>HPLC Vials & Consumables</option>
+            <option>Multiple Products</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>MESSAGE</label>
+          <textarea placeholder="Describe your application, column dimensions needed, or any questions..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleSubmit(event)">
+          Send Request
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:0;">
+        <div class="z-mark">Z</div>
+        <span>znric <span style="color:var(--teal);font-weight:400;">life sciences</span></span>
+      </div>
+      <p>Precision chromatography columns and laboratory consumables. Supplying researchers, pharma, and industry across India.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" aria-label="LinkedIn">in</a>
+        <a class="social-link" href="#" aria-label="Email">✉</a>
+        <a class="social-link" href="tel:+917989693894" aria-label="Phone">📞</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>HPLC Columns</h4>
+      <ul>
+        <li><a href="#products">Athena C18 / C8 / C4</a></li>
+        <li><a href="#products">Athena C30 / Phenyl</a></li>
+        <li><a href="#products">HILIC Columns</a></li>
+        <li><a href="#products">Ion Exchange (SAX/SCX)</a></li>
+        <li><a href="#products">SEC / GPC Columns</a></li>
+        <li><a href="#spotlight">Athena XPH-C18 (New)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>GC & Consumables</h4>
+      <ul>
+        <li><a href="#gc-section">GC Capillary Columns</a></li>
+        <li><a href="#gc-section">Packed GC Columns</a></li>
+        <li><a href="#gc-section">GC Ferrules</a></li>
+        <li><a href="#consumables">Syringe Filters</a></li>
+        <li><a href="#consumables">HPLC Vials</a></li>
+        <li><a href="#consumables">Headspace Vials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Znric</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.znric-lifesciences.com" target="_blank">Website</a></li>
+        <li><a href="tel:+917989693894">+91 7989693894</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Znric Life Sciences, Hyderabad. All rights reserved.</span>
+    <span>Pragathi Nagar, Hyderabad 500090</span>
+  </div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
