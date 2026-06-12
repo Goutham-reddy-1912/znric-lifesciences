@@ -1,70 +1,4 @@
 
-/* ═══════ HERO CANVAS: animated dot grid ═══════ */
-(function() {
-  const canvas = document.getElementById('hero-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, dots = [], mouse = { x: -999, y: -999 };
-  const SPACING = 38, RADIUS = 1.6;
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    buildDots();
-  }
-
-  function buildDots() {
-    dots = [];
-    const cols = Math.ceil(W / SPACING) + 1;
-    const rows = Math.ceil(H / SPACING) + 1;
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        dots.push({ bx: c * SPACING, by: r * SPACING, x: c * SPACING, y: r * SPACING, phase: Math.random() * Math.PI * 2 });
-      }
-    }
-  }
-
-  function draw(t) {
-    ctx.clearRect(0, 0, W, H);
-    dots.forEach(d => {
-      const dx = d.bx - mouse.x, dy = d.by - mouse.y;
-      const dist = Math.sqrt(dx*dx+dy*dy);
-      const repel = Math.max(0, 1 - dist / 140);
-      d.x = d.bx + dx * repel * 0.4;
-      d.y = d.by + dy * repel * 0.4;
-      const pulse = 0.5 + 0.5 * Math.sin(t * 0.0008 + d.phase);
-      const alpha = 0.18 + pulse * 0.3;
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, RADIUS, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,200,${alpha})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  canvas.parentElement.addEventListener('mousemove', e => {
-    const r = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - r.left;
-    mouse.y = e.clientY - r.top;
-  });
-  canvas.parentElement.addEventListener('mouseleave', () => { mouse.x = mouse.y = -999; });
-
-  resize();
-  requestAnimationFrame(draw);
-})();
-
-/* ═══════ HERO CHART BARS ═══════ */
-(function() {
-  const heights = [55, 40, 70, 85, 65, 90, 75, 60, 80, 50, 70, 88, 45, 92, 68, 78];
-  const container = document.getElementById('heroChart');
-  heights.forEach((h, i) => {
-    const bar = document.createElement('div');
-    bar.className = 'chart-bar';
-    bar.style.height = h + '%';
-    bar.style.animationDelay = (i * 0.05) + 's';
-    container.appendChild(bar);
-  });
-})();
 
 /* ═══════ SCROLL REVEAL ═══════ */
 const revealObserver = new IntersectionObserver((entries) => {
@@ -174,3 +108,22 @@ function handleSubmit(e) {
   }, 1200);
 }
 
+
+
+ 
+//  Nav drop down 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dropdown = document.querySelector(".dropdown > a");
+
+    dropdown.addEventListener("click", function(e) {
+
+        if (window.innerWidth <= 992) {
+            e.preventDefault();
+
+            this.nextElementSibling.classList.toggle("active");
+        }
+
+    });
+
+});

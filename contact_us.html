@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Znric Life Sciences — Precision Chromatography Solutions</title>
+<meta name="description" content="Znric Life Sciences supplies premium HPLC columns, GC columns, syringe filters, and lab consumables. Based in Hyderabad, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-logo">
+        <a href="index.html">
+            <img src="./imgs/logo-color.png" alt="Znric Life Sciences Logo" class="logo-img" width="60%">
+        </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+
+        <li class="dropdown">
+            <a href="#">Products <span class="arrow">▼</span></a>
+
+            <ul class="submenu">
+                <li><a href="alpha_serv.html">Alpha Service</a></li>
+                <li><a href="product2.html">Product 2</a></li>
+                <li><a href="product3.html">Product 3</a></li>
+                <li><a href="product4.html">Product 4</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="services.html">Services <span class="arrow">▼</span></a>
+            <ul class="submenu">
+                <li><a href="">Alpha Service</a></li>
+                <li><a href="product2.html">Product 2</a></li>
+                <li><a href="product3.html">Product 3</a></li>
+                <li><a href="product4.html">Product 4</a></li>
+            </ul>
+        </li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="technical-support.html">Technical Support</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <a href="contact.html" class="blob-btn">
+    Get a Quote
+    <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+        </span>
+    </span>
+  </a>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+    <defs>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+                values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 18 -7"
+                result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+    </defs>
+</svg>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#products" onclick="closeMobileNav()">Products</a>
+  <a href="#spotlight" onclick="closeMobileNav()">New Product</a>
+  <a href="#gc-section" onclick="closeMobileNav()">GC Columns</a>
+  <a href="#consumables" onclick="closeMobileNav()">Consumables</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#contact" onclick="closeMobileNav()">Get a Quote</a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">CONTACT US</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-sub" style="margin-bottom:3rem;">Request a quote, technical specifications, or talk to a chromatography specialist.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <h4>ADDRESS</h4>
+            <p>2nd Floor, H.no: 6-134/8/A/1, Plot No. 8,<br>Pragathinagar Road, Near Silpa Paradise,<br>Pragathi Nagar, Hyderabad 500090</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <h4>PHONE</h4>
+            <p><a href="tel:+917989693894">+91 7989693894</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🌐</div>
+          <div>
+            <h4>WEBSITE</h4>
+            <p><a href="https://www.znric-lifesciences.com" target="_blank">www.znric-lifesciences.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-block reveal reveal-delay-1">
+      <h3>Request a Quote</h3>
+      <p>Tell us what you need and we'll respond within one business day with pricing and availability.</p>
+      <div class="cta-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>NAME</label>
+            <input type="text" placeholder="Dr. / Mr. / Ms.">
+          </div>
+          <div class="form-field">
+            <label>ORGANISATION</label>
+            <input type="text" placeholder="Lab / Institute / Company">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>EMAIL</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-field">
+          <label>PRODUCT OF INTEREST</label>
+          <select>
+            <option value="">Select a product category</option>
+            <option>Athena HPLC Columns</option>
+            <option>CNWSep Polymer Columns</option>
+            <option>SEC / GPC Columns</option>
+            <option>GC Capillary Columns</option>
+            <option>Athena XPH-C18 (New)</option>
+            <option>Syringe Filters</option>
+            <option>HPLC Vials & Consumables</option>
+            <option>Multiple Products</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>MESSAGE</label>
+          <textarea placeholder="Describe your application, column dimensions needed, or any questions..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleSubmit(event)">
+          Send Request
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:0;">
+        <div class="z-mark">Z</div>
+        <span>znric <span style="color:var(--teal);font-weight:400;">life sciences</span></span>
+      </div>
+      <p>Precision chromatography columns and laboratory consumables. Supplying researchers, pharma, and industry across India.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" aria-label="LinkedIn">in</a>
+        <a class="social-link" href="#" aria-label="Email">✉</a>
+        <a class="social-link" href="tel:+917989693894" aria-label="Phone">📞</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>HPLC Columns</h4>
+      <ul>
+        <li><a href="#products">Athena C18 / C8 / C4</a></li>
+        <li><a href="#products">Athena C30 / Phenyl</a></li>
+        <li><a href="#products">HILIC Columns</a></li>
+        <li><a href="#products">Ion Exchange (SAX/SCX)</a></li>
+        <li><a href="#products">SEC / GPC Columns</a></li>
+        <li><a href="#spotlight">Athena XPH-C18 (New)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>GC & Consumables</h4>
+      <ul>
+        <li><a href="#gc-section">GC Capillary Columns</a></li>
+        <li><a href="#gc-section">Packed GC Columns</a></li>
+        <li><a href="#gc-section">GC Ferrules</a></li>
+        <li><a href="#consumables">Syringe Filters</a></li>
+        <li><a href="#consumables">HPLC Vials</a></li>
+        <li><a href="#consumables">Headspace Vials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Znric</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.znric-lifesciences.com" target="_blank">Website</a></li>
+        <li><a href="tel:+917989693894">+91 7989693894</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Znric Life Sciences, Hyderabad. All rights reserved.</span>
+    <span>Pragathi Nagar, Hyderabad 500090</span>
+  </div>
+</footer>
+<script src="script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
+
+

@@ -8,26 +8,78 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <div class="nav-logo">
-    <div class="z-mark">Z</div>
-    <span>znric <span style="color:var(--teal);font-weight:400;">life sciences</span></span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#products">Products</a></li>
-    <li><a href="#spotlight">New</a></li>
-    <li><a href="#gc-section">GC Columns</a></li>
-    <li><a href="#consumables">Consumables</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get a Quote</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+    <div class="nav-logo">
+        <a href="index.html">
+            <img src="./imgs/logo-color.png" alt="Znric Life Sciences Logo" class="logo-img" width="60%">
+        </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+
+        <li class="dropdown">
+            <a href="#">Products <span class="arrow">▼</span></a>
+
+            <ul class="submenu">
+                <li><a href="alpha_serv.html">Alpha Service</a></li>
+                <li><a href="product2.html">Product 2</a></li>
+                <li><a href="product3.html">Product 3</a></li>
+                <li><a href="product4.html">Product 4</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#services">Services <span class="arrow">▼</span></a>
+            <ul class="submenu">
+                <li><a href="#purification">Purification</a></li>
+                <li><a href="#method-development">Method Development</a></li>
+                <li><a href="#validation">Validation</a></li>
+                <li><a href="#sample-analysis">Sample Analysis</a></li>
+            </ul>
+        </li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="technical-support.html">Technical Support</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+
+    <a href="contact_us.html" class="blob-btn">
+    Get a Quote
+    <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+        </span>
+    </span>
+  </a>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+    <defs>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+                values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 18 -7"
+                result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+    </defs>
+</svg>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
@@ -39,131 +91,169 @@
   <a href="#contact" onclick="closeMobileNav()">Get a Quote</a>
 </div>
 
-<!-- HERO -->
-<section id="hero">
-  <canvas id="hero-canvas"></canvas>
+<section id="hero" class="hero_sec">
 
-  <div class="hero-content reveal">
-    <div class="hero-eyebrow">HYDERABAD · INDIA &nbsp;|&nbsp; PRECISION CHROMATOGRAPHY</div>
-    <h1 class="hero-h1">
-      Where <em>Science</em><br>
-      Meets Separation<br>
-      Precision.
-    </h1>
-    <p class="hero-desc">
-      Znric Life Sciences supplies premium HPLC columns, GC columns, syringe filters, and lab consumables — engineered for research, pharmaceutical, and industrial analysis.
-    </p>
-    <div class="hero-actions">
-      <a href="#products" class="btn-primary">
-        Explore Columns
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#contact" class="btn-ghost">Request Pricing</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat reveal reveal-delay-1">
-        <span class="counter" data-target="50">0</span>
-        <p>Column variants</p>
-      </div>
-      <div class="hero-stat reveal reveal-delay-2">
-        <span class="counter" data-target="500">0</span>
-        <p>Hours lifetime tested</p>
-      </div>
-      <div class="hero-stat reveal reveal-delay-3">
-        <span class="counter" data-target="12">0</span>
-        <p>pH range support</p>
-      </div>
-    </div>
-  </div>
+    <div class="hero-overlay"></div>
 
-  <div class="hero-visual reveal reveal-delay-2">
-    <div class="readout-card">
-      <div class="readout-header">
-        <div class="readout-title">COLUMN · ATHENA C18-WP · LIVE SPEC</div>
-        <div class="readout-live">ACTIVE</div>
-      </div>
-      <div class="readout-grid">
-        <div class="readout-cell">
-          <div class="rc-label">PARTICLE SIZE</div>
-          <div class="rc-value">3<span class="rc-unit">μm / 5μm</span></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="hero-content">
+
+                    <div class="hero-eyebrow">
+                        HYDERABAD • INDIA | ADVANCED CHROMATOGRAPHY SOLUTIONS
+                    </div>
+
+                    <h1 class="hero-h1">
+                      Precision Crafted <span>Chromatography Solutions</span> for <br>Every Analysis
+        
+                    </h1>
+
+                    <p class="hero-desc">
+                        Znric Life Sciences delivers premium HPLC columns, GC columns,
+                        syringe filters, and laboratory consumables designed for
+                        pharmaceutical, research, biotechnology, and industrial laboratories.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#products" class="btn-donate">
+                            Explore Products
+                        </a>
+
+                        <a href="#contact" class="btn-donate">
+                            Request Pricing
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="readout-cell">
-          <div class="rc-label">PORE SIZE</div>
-          <div class="rc-value">100<span class="rc-unit">Å</span></div>
-        </div>
-        <div class="readout-cell">
-          <div class="rc-label">CARBON CONTENT</div>
-          <div class="rc-value">17<span class="rc-unit">%</span></div>
-        </div>
-        <div class="readout-cell">
-          <div class="rc-label">pH RANGE</div>
-          <div class="rc-value">1.5<span class="rc-unit">–10</span></div>
-        </div>
-        <div class="readout-cell">
-          <div class="rc-label">TEMP RANGE</div>
-          <div class="rc-value">20–60<span class="rc-unit">°C</span></div>
-        </div>
-        <div class="readout-cell">
-          <div class="rc-label">END-CAPPED</div>
-          <div class="rc-value" style="color:var(--teal)">Yes</div>
-        </div>
-      </div>
-      <div class="readout-chart" id="heroChart"></div>
-      <div class="readout-footer">
-        <div class="readout-badge">HPLC ANALYTICAL</div>
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;color:var(--muted);">Diameter 2.1 / 4.6 mm</div>
+    </div>
+
+</section>
+
+<!-- ABOUT / WHY ZNRIC -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-eyebrow">ABOUT ZNRIC</div>
+      <h2 class="section-title">Precision Science,<br>Local Expertise</h2>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:540px;">
+        Znric Life Sciences is a Hyderabad-based supplier of chromatography columns and laboratory consumables, delivering the same quality standard as global leaders — with the responsiveness of a local partner.
+      </p>
+      <p style="color:var(--muted);line-height:1.8;max-width:540px;">
+        Our HPLC and GC column portfolio covers every separation challenge: reversed-phase, ion exchange, HILIC, size exclusion, and preparative applications. Every column undergoes rigorous performance testing before dispatch.
+      </p>
+      <div class="hero-actions" style="margin-top:2.5rem;">
+        <a href="#contact" class="btn-donate">Talk to a Specialist</a>
       </div>
     </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <div class="arrow"></div>
-    SCROLL
+    <div class="about-right">
+      <img src="./imgs/about_us.jpg" alt="Znric Team" class="brs-10 about-img reveal reveal-delay-1">
+    </div>
   </div>
 </section>
 
-<!-- PRODUCT CATEGORIES -->
-<section id="categories">
-  <div class="section-eyebrow">PRODUCT RANGE</div>
-  <h2 class="section-title">Complete Analytical<br>Column Portfolio</h2>
-  <div class="categories-grid">
-    <div class="cat-card featured reveal" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-      <div class="cat-icon">⚗️</div>
-      <h3>HPLC Analytical Columns</h3>
-      <p>Silica-based columns including C18, C8, C4, C30, Phenyl, Silica, NH2, CN, Diol, SAX, SCX, and HILIC phases. Particle sizes 3–5 μm.</p>
-      <div class="cat-count">16 COLUMN TYPES · ATHENA SERIES</div>
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section">
+
+    <div class="container">
+
+        <div class="text-center">
+
+            <div class="section-eyebrow">
+                OUR SERVICES
+            </div>
+
+            <h2 class="section-title">
+                Analytical Expertise <br>
+                Backed by Precision
+            </h2>
+
+            <p class="section-desc">
+                Comprehensive chromatography solutions ranging from purification and method development to validation and sample analysis.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Purification -->
+            <div class="service-card" id="purification">
+                <div class="service-icon">
+                    ⚗️
+                </div>
+
+                <h3>Purification</h3>
+
+                <p>
+                    As a leading column manufacturer in India with proficient development and manufacturing capabilities, ZNRIC Life Sciences provides one-stop preparative chromatographic services for separation and purification. Our team is experienced in method scale-up, optimization, and process validation.
+                </p>
+
+                <div class="service-tag">
+                    Gram Scale Purification
+                </div>
+            </div>
+
+            <!-- Method Development -->
+            <div class="service-card" id="method-development">
+                <div class="service-icon">
+                    🔬
+                </div>
+
+                <h3>Method Development</h3>
+
+                <p>
+                    UV detectors are widely used for chromatographic analysis due to their robustness and versatility. We develop optimized analytical methods using UV and Diode Array Detection systems to ensure reliable monitoring and accurate compound characterization.
+                </p>
+
+                <div class="service-tag">
+                    UV & DAD Detection
+                </div>
+            </div>
+
+            <!-- Validation -->
+            <div class="service-card" id="validation">
+                <div class="service-icon">
+                    ✅
+                </div>
+
+                <h3>Validation</h3>
+
+                <p>
+                    Comprehensive validation services covering analytical methods, instrumentation, laboratory conditions, reagents, and operational procedures. We ensure every process consistently delivers accurate, reliable, and reproducible analytical results.
+                </p>
+
+                <div class="service-tag">
+                    Process Validation
+                </div>
+            </div>
+
+            <!-- Sample Analysis -->
+            <div class="service-card" id="sample-analysis">
+                <div class="service-icon">
+                    🧪
+                </div>
+
+                <h3>Sample Analysis</h3>
+
+                <p>
+                    Professional chromatographic and spectroscopic sample analysis services. We prepare representative and interference-free samples suitable for HPLC, GC, ICP-MS, NMR, and other advanced analytical techniques.
+                </p>
+
+                <div class="service-tag">
+                    Analytical Testing
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    <div class="cat-card reveal reveal-delay-1" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-      <div class="cat-icon">🧬</div>
-      <h3>Polymer Matrix Columns</h3>
-      <p>CNWSep reverse phase, sugar & organic acid separation, and ion exchange columns for complex matrices.</p>
-      <div class="cat-count">CNWSep SERIES · 20+ VARIANTS</div>
-    </div>
-    <div class="cat-card reveal reveal-delay-2" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-      <div class="cat-icon">🔬</div>
-      <h3>SEC / GPC Columns</h3>
-      <p>CruxPoly and ElfPoly polymer matrix SEC columns, plus CNWGel silica SEC columns for molecular weight distribution.</p>
-      <div class="cat-count">T100–TMIX · pH 1–14</div>
-    </div>
-    <div class="cat-card reveal reveal-delay-3" onclick="document.getElementById('gc-section').scrollIntoView({behavior:'smooth'})">
-      <div class="cat-icon">🌡️</div>
-      <h3>GC Capillary Columns</h3>
-      <p>Wax, 225, 1701, 1301, CD-50, CD-35, CD-5 phases. Wide temperature ranges from −60°C to 320°C.</p>
-      <div class="cat-count">CD SERIES · 7 PHASES</div>
-    </div>
-    <div class="cat-card reveal reveal-delay-1" onclick="document.getElementById('consumables').scrollIntoView({behavior:'smooth'})">
-      <div class="cat-icon">🧪</div>
-      <h3>Syringe Filters</h3>
-      <p>PTFE, PVDF, and NYLON membranes in 0.22 μm and 0.45 μm pore sizes. 25 mm diameter, 100/box.</p>
-      <div class="cat-count">3 MEMBRANE TYPES · 8 VARIANTS</div>
-    </div>
-    <div class="cat-card reveal reveal-delay-2" onclick="document.getElementById('consumables').scrollIntoView({behavior:'smooth'})">
-      <div class="cat-icon">📦</div>
-      <h3>Lab Consumables</h3>
-      <p>HPLC vials, crimp & screw caps, mobile phase filtration assemblies, headspace vials, disposable syringes, and mechanical pipettes.</p>
-      <div class="cat-count">FULL CONSUMABLES RANGE</div>
-    </div>
-  </div>
+
 </section>
 
 <!-- HPLC PRODUCTS DEEP DIVE -->
@@ -625,132 +715,6 @@
   </div>
 </section>
 
-<!-- ABOUT / WHY ZNRIC -->
-<section id="about">
-  <div class="about-grid">
-    <div class="reveal">
-      <div class="section-eyebrow">ABOUT ZNRIC</div>
-      <h2 class="section-title">Precision Science,<br>Local Expertise</h2>
-      <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:540px;">
-        Znric Life Sciences is a Hyderabad-based supplier of chromatography columns and laboratory consumables, delivering the same quality standard as global leaders — with the responsiveness of a local partner.
-      </p>
-      <p style="color:var(--muted);line-height:1.8;max-width:540px;">
-        Our HPLC and GC column portfolio covers every separation challenge: reversed-phase, ion exchange, HILIC, size exclusion, and preparative applications. Every column undergoes rigorous performance testing before dispatch.
-      </p>
-      <div class="hero-actions" style="margin-top:2.5rem;">
-        <a href="#contact" class="btn-primary">Talk to a Specialist</a>
-      </div>
-    </div>
-    <div class="about-right">
-      <div class="feature-block reveal">
-        <div class="feature-icon">🎯</div>
-        <div>
-          <h4>Performance Tested</h4>
-          <p>Each column verified for efficiency, peak symmetry, and retention before delivery.</p>
-        </div>
-      </div>
-      <div class="feature-block reveal reveal-delay-1">
-        <div class="feature-icon">🧪</div>
-        <div>
-          <h4>Full Phase Range</h4>
-          <p>C18 to HILIC, ion exchange to SEC — one supplier for your entire analytical workflow.</p>
-        </div>
-      </div>
-      <div class="feature-block reveal reveal-delay-2">
-        <div class="feature-icon">📦</div>
-        <div>
-          <h4>Rapid Local Supply</h4>
-          <p>Hyderabad-based with fast dispatch across India. Same quality, shorter lead times.</p>
-        </div>
-      </div>
-      <div class="feature-block reveal reveal-delay-3">
-        <div class="feature-icon">🤝</div>
-        <div>
-          <h4>Technical Support</h4>
-          <p>Expert guidance on column selection, method development, and troubleshooting.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="reveal">
-      <div class="section-eyebrow">CONTACT US</div>
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-sub" style="margin-bottom:3rem;">Request a quote, technical specifications, or talk to a chromatography specialist.</p>
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="ci-icon">📍</div>
-          <div>
-            <h4>ADDRESS</h4>
-            <p>2nd Floor, H.no: 6-134/8/A/1, Plot No. 8,<br>Pragathinagar Road, Near Silpa Paradise,<br>Pragathi Nagar, Hyderabad 500090</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">📞</div>
-          <div>
-            <h4>PHONE</h4>
-            <p><a href="tel:+917989693894">+91 7989693894</a></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">🌐</div>
-          <div>
-            <h4>WEBSITE</h4>
-            <p><a href="https://www.znric-lifesciences.com" target="_blank">www.znric-lifesciences.com</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cta-block reveal reveal-delay-1">
-      <h3>Request a Quote</h3>
-      <p>Tell us what you need and we'll respond within one business day with pricing and availability.</p>
-      <div class="cta-form">
-        <div class="form-row">
-          <div class="form-field">
-            <label>NAME</label>
-            <input type="text" placeholder="Dr. / Mr. / Ms.">
-          </div>
-          <div class="form-field">
-            <label>ORGANISATION</label>
-            <input type="text" placeholder="Lab / Institute / Company">
-          </div>
-        </div>
-        <div class="form-field">
-          <label>EMAIL</label>
-          <input type="email" placeholder="you@example.com">
-        </div>
-        <div class="form-field">
-          <label>PRODUCT OF INTEREST</label>
-          <select>
-            <option value="">Select a product category</option>
-            <option>Athena HPLC Columns</option>
-            <option>CNWSep Polymer Columns</option>
-            <option>SEC / GPC Columns</option>
-            <option>GC Capillary Columns</option>
-            <option>Athena XPH-C18 (New)</option>
-            <option>Syringe Filters</option>
-            <option>HPLC Vials & Consumables</option>
-            <option>Multiple Products</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>MESSAGE</label>
-          <textarea placeholder="Describe your application, column dimensions needed, or any questions..."></textarea>
-        </div>
-        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleSubmit(event)">
-          Send Request
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -804,5 +768,9 @@
   </div>
 </footer>
 <script src="script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+ 
+
 </body>
 </html>
