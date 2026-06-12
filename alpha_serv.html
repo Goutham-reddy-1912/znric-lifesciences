@@ -13,30 +13,74 @@
 <body>
 
 <!-- NAV -->
+<!-- NAV -->
 <nav id="navbar">
-  <div class="nav-logo">
-    <a href="index.html"><img src="./imgs/logo-color.png" alt="Znric Life Sciences Logo" class="logo-img" width="60%"></a>
-    
-  </div>
-  <ul class="nav-links">
-    <li><a href="">About</a></li>
-    <li><a href="">Products</a>
-    <ul class="submenu">
-        <li><a href="product1.html">Product 1</a></li>
-        <li><a href="product2.html">Product 2</a></li>
-        <li><a href="product3.html">Product 3</a></li>
-        <li><a href="product4.html">Product 4</a></li>
+    <div class="nav-logo">
+        <a href="index.html">
+            <img src="./imgs/logo-color.png" alt="Znric Life Sciences Logo" class="logo-img" width="60%">
+        </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+
+        <li class="dropdown">
+            <a href="#">Products <span class="arrow">▼</span></a>
+
+            <ul class="submenu">
+                <li><a href="alpha_serv.html">Alpha Service</a></li>
+                <li><a href="product2.html">Product 2</a></li>
+                <li><a href="product3.html">Product 3</a></li>
+                <li><a href="product4.html">Product 4</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="index.html#services">Services <span class="arrow">▼</span></a>
+            <ul class="submenu">
+                <li><a href="index.html#purification">Purification</a></li>
+                <li><a href="index.html#method-development">Method Development</a></li>
+                <li><a href="index.html#validation">Validation</a></li>
+                <li><a href="index.html#sample-analysis">Sample Analysis</a></li>
+            </ul>
+        </li>
+        <!-- <li><a href="careers.html">Careers</a></li> -->
+        <!-- <li><a href="technical-support.html">Technical Support</a></li> -->
+        <li><a href="contact_us.html">Contact Us</a></li>
     </ul>
-    </li>
-    <li><a href="">Services</a></li>
-    <li><a href="">Careers</a></li>
-    <li><a href="">Technical Support</a></li>
-    <li><a href="">Contact Us</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get a Quote</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+
+    <a href="contact_us.html" class="blob-btn">
+    Get a Quote
+    <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+        </span>
+    </span>
+  </a>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+    <defs>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+                values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 18 -7"
+                result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+    </defs>
+</svg>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
